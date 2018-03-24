@@ -46,13 +46,13 @@ public class Tower : MonoBehaviour {
         Quaternion lookRotate = Quaternion.LookRotation(dir);
         //Vector3 rotation = lookRotate.eulerAngles;
 
-        Vector3 rotation = lookRotate.eulerAngles;
-        rotateTower.rotation = Quaternion.Euler(0f, rotation.y-90, 0f);
-
-        //Vector3 rotation = Quaternion.Lerp(rotateTower.rotation, lookRotate, Time.deltaTime * speedTroll).eulerAngles;
+        //Vector3 rotation = lookRotate.eulerAngles;
         //rotateTower.rotation = Quaternion.Euler(0f, rotation.y, 0f);
 
-	}
+        Vector3 rotation = Quaternion.Lerp(rotateTower.rotation, lookRotate, Time.deltaTime * speedTroll).eulerAngles;
+        rotateTower.rotation = Quaternion.Euler(0f, rotation.y, 0f);
+
+    }
 
     private void OnDrawGizmosSelected()
     {
