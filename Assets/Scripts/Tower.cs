@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -9,7 +10,14 @@ public class Tower : MonoBehaviour {
     public float range = 15f;
     public string trollTag;
     public Transform rotateTower;
-    public float speedTroll;
+    public float speedRotate;
+
+    public float fireRate = 1f;
+    public float fireCountDown = 0f;
+
+    public GameObject bullet_prefab;
+    public Transform FirePoint;
+
 	void Start () {
         InvokeRepeating("UpdateTarget", 0f, 0.5f);
 	}
@@ -44,14 +52,24 @@ public class Tower : MonoBehaviour {
             return;
         Vector3 dir = target.position - transform.position;
         Quaternion lookRotate = Quaternion.LookRotation(dir);
-        //Vector3 rotation = lookRotate.eulerAngles;
-
-        //Vector3 rotation = lookRotate.eulerAngles;
-        //rotateTower.rotation = Quaternion.Euler(0f, rotation.y, 0f);
-
-        Vector3 rotation = Quaternion.Lerp(rotateTower.rotation, lookRotate, Time.deltaTime * speedTroll).eulerAngles;
+        Vector3 rotation = Quaternion.Lerp(rotateTower.rotation, lookRotate, Time.deltaTime * speedRotate).eulerAngles;
         rotateTower.rotation = Quaternion.Euler(0f, rotation.y, 0f);
+        if (fireCountDown<=0f)
+        {
+            Shoot();
+            fireCountDown = 1f / fireRate;
+        }
+        fireCountDown -= Time.deltaTime;
+    }
 
+    private void Shoot()
+    {
+        GameObject Bullet_new = (GameObject)Instantiate(bullet_prefab, FirePoint.position, FirePoint.rotation);
+        Bullet bullet = Bullet_new.GetComponent<Bullet>();
+        if(bullet != null)
+        {
+            bullet.Rage(target);
+        }
     }
 
     private void OnDrawGizmosSelected()
