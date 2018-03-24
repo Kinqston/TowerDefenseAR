@@ -19,32 +19,61 @@ public class Tower : MonoBehaviour {
     public Transform FirePoint;
 
 	void Start () {
-        InvokeRepeating("UpdateTarget", 0f, 0.5f);
+        //InvokeRepeating("UpdateTarget", 0f, 0.5f);
+        StartCoroutine(UpdateTarget());
 	}
 
-    private void UpdateTarget()
+    IEnumerator UpdateTarget()
     {
-        GameObject[] trolls = GameObject.FindGameObjectsWithTag(trollTag);
-        float distance_test = Mathf.Infinity;
-        GameObject target_troll_test = null;
-        foreach (GameObject troll in trolls)
+        while (true)
         {
-            float rangetotroll = Vector3.Distance(transform.position, troll.transform.position);
-            if (rangetotroll < distance_test)
+            GameObject[] trolls = GameObject.FindGameObjectsWithTag(trollTag);
+            float distance_test = Mathf.Infinity;
+            GameObject target_troll_test = null;
+            foreach (GameObject troll in trolls)
             {
-                distance_test = rangetotroll;
-                target_troll_test = troll;
+                float rangetotroll = Vector3.Distance(transform.position, troll.transform.position);
+                if (rangetotroll < distance_test)
+                {
+                    distance_test = rangetotroll;
+                    target_troll_test = troll;
+                }
+                if (target_troll_test != null && distance_test <= range)
+                {
+                    target = target_troll_test.transform;
+                }
+                else
+                {
+                    target = null;
+                }
             }
-            if (target_troll_test != null && distance_test <= range)
-            {
-                target = target_troll_test.transform;
-            }
-            else
-            {
-                target = null;
-            }
+            yield return null;
         }
     }
+
+    //private void UpdateTarget()
+    //{
+    //    GameObject[] trolls = GameObject.FindGameObjectsWithTag(trollTag);
+    //    float distance_test = Mathf.Infinity;
+    //    GameObject target_troll_test = null;
+    //    foreach (GameObject troll in trolls)
+    //    {
+    //        float rangetotroll = Vector3.Distance(transform.position, troll.transform.position);
+    //        if (rangetotroll < distance_test)
+    //        {
+    //            distance_test = rangetotroll;
+    //            target_troll_test = troll;
+    //        }
+    //        if (target_troll_test != null && distance_test <= range)
+    //        {
+    //            target = target_troll_test.transform;
+    //        }
+    //        else
+    //        {
+    //            target = null;
+    //        }
+    //    }
+    //}
 
     // Update is called once per frame
     void Update () {

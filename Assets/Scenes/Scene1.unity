@@ -491,7 +491,7 @@ Prefab:
     - target: {fileID: 114089799826689762, guid: 5d5e2504a69709241894fbfc59eb2500,
         type: 2}
       propertyPath: fireRate
-      value: 5
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 5d5e2504a69709241894fbfc59eb2500, type: 2}
@@ -965,7 +965,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1997590676}
   m_LocalRotation: {x: 0.36540222, y: -0.6393537, z: 0.33569813, w: 0.58737975}
-  m_LocalPosition: {x: 86.9, y: 16.6, z: 20.7}
+  m_LocalPosition: {x: 92.9, y: 19.1, z: 20.7}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
