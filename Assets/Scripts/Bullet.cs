@@ -6,7 +6,7 @@ using UnityEngine;
 public class Bullet : MonoBehaviour {
 
     public Transform target;
-    public float speed = 20f;
+    public float speed;
 
     public void Rage(Transform _target) {
         target = _target;
