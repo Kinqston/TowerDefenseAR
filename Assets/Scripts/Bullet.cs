@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class Bullet : MonoBehaviour {
 
-    public Transform target;
+    private Transform target;
     public float speed;
 
     public void Rage(Transform _target) {
