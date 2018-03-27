@@ -18,7 +18,9 @@ public class Tower : MonoBehaviour {
     public GameObject bullet_prefab;
     public Transform FirePoint;
 
-	void Start () {
+    public GameObject DestroyMenu;
+
+    void Start () {
         //InvokeRepeating("UpdateTarget", 0f, 0.5f);
         StartCoroutine(UpdateTarget());
 	}
@@ -106,4 +108,14 @@ public class Tower : MonoBehaviour {
         Gizmos.color = Color.red;
         Gizmos.DrawWireSphere(transform.position, range);
     }
+
+    private void OnMouseDown()
+    {
+        GameObject Upgrade = GameObject.FindGameObjectWithTag("Destroy");
+        Upgrade.GetComponent<Canvas>().enabled = true;
+
+        BuildManeger.instant.destroyTower = gameObject;
+
+    }
+
 }
