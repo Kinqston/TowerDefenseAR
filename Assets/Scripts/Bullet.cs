@@ -8,6 +8,8 @@ public class Bullet : MonoBehaviour {
     private Transform target;
     public float speed;
 
+    public float explosionRadius;
+
     public void Rage(Transform _target) {
         target = _target;
     }
@@ -31,7 +33,38 @@ public class Bullet : MonoBehaviour {
 
     private void Hit()
     {
+        if (explosionRadius > 0f)
+        {
+            Explode();
+        }
+        else
+        {
+            Damage(target);
+        }
         Destroy(gameObject);
         Destroy(target.gameObject);
+    }
+
+    void Explode()
+    {
+        Collider[] colliders =  Physics.OverlapSphere(transform.position, explosionRadius);
+        foreach(Collider collider in colliders)
+        {
+            if (collider.tag == "Troll")
+            {
+                Damage(collider.transform);
+            }
+        }
+    }
+
+    private void OnDrawGizmosSelected()
+    {
+        Gizmos.color = Color.red;
+        Gizmos.DrawSphere(transform.position, explosionRadius);
+    }
+
+    void Damage(Transform enemy)
+    {
+        Destroy(enemy.gameObject);
     }
 }
