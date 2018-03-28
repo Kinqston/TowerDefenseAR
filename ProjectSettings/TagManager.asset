@@ -7,6 +7,8 @@ TagManager:
   - Troll
   - Shop
   - Destroy
+  - Life
+  - LifeScore
   layers:
   - Default
   - TransparentFX

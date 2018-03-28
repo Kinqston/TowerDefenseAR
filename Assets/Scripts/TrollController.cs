@@ -22,4 +22,22 @@ public class TrollController : MonoBehaviour {
     {
 
     }
+
+   
+
+
+    void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.tag == "Life")
+        {
+            PlayerStats.Life--;
+            if (PlayerStats.Life == 0)
+            {
+                SceneController Sc = new SceneController();
+                Sc.GameOver();
+            }
+            Destroy(gameObject);
+            //Destroy(collision.gameObject);    
+        }
+    }
 }

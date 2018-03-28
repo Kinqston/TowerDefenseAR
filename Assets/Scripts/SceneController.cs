@@ -10,4 +10,12 @@ public class SceneController : MonoBehaviour {
     {
         SceneManager.LoadScene(level);
     }
+
+    public void GameOver()
+    {
+        SceneManager.LoadScene(0);
+        PlayerStats.Life = 10;
+        PlayerStats.Money = 100;
+
+    }
 }
