@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class Shop : MonoBehaviour {
 
+    //public TowerCost Tower1;
+    //public TowerCost Tower2;
+
     BuildManeger BM;
 
     // Use this for initialization
@@ -26,28 +29,38 @@ public class Shop : MonoBehaviour {
 
     public void buildTower1()
     {
-        BM.setTowerToBuild(BuildManeger.instant.tower1);
-        GameObject TowerNew = Instantiate(BuildManeger.instant.tower1, BuildManeger.instant.posTower.transform.position, BuildManeger.instant.posTower.transform.rotation);
-        TowerNew.GetComponent<Tower>().PlaceTower = BuildManeger.instant.posTower;
+        if (PlayerStats.Money >= BuildManeger.instant.tower1.GetComponent<Tower>().Cost)
+        {
+            BM.setTowerToBuild(BuildManeger.instant.tower1);
+            GameObject TowerNew = Instantiate(BuildManeger.instant.tower1, BuildManeger.instant.posTower.transform.position, BuildManeger.instant.posTower.transform.rotation);
+            TowerNew.GetComponent<Tower>().PlaceTower = BuildManeger.instant.posTower;
+            //BuildManeger.instant.shopTrue();
+            PlayerStats.Money -= 30;
+            BuildManeger.instant.posTower.GetComponent<Fields>().towerTrue = true;
+        }
         gameObject.SetActive(false);
-
-        //BuildManeger.instant.shopTrue();
-        BuildManeger.instant.posTower.GetComponent<Fields>().towerTrue = true;
     }
 
     public void buildTower2()
     {
-        BM.setTowerToBuild(BuildManeger.instant.tower2);
-        GameObject TowerNew = Instantiate(BuildManeger.instant.tower2, BuildManeger.instant.posTower.transform.position, BuildManeger.instant.posTower.transform.rotation);
-        TowerNew.GetComponent<Tower>().PlaceTower = BuildManeger.instant.posTower;
+        if (PlayerStats.Money >= BuildManeger.instant.tower2.GetComponent<Tower>().Cost)
+        {
+            BM.setTowerToBuild(BuildManeger.instant.tower2);
+            GameObject TowerNew = Instantiate(BuildManeger.instant.tower2, BuildManeger.instant.posTower.transform.position, BuildManeger.instant.posTower.transform.rotation);
+            TowerNew.GetComponent<Tower>().PlaceTower = BuildManeger.instant.posTower;            
+            PlayerStats.Money -= 50;
+            BuildManeger.instant.posTower.GetComponent<Fields>().towerTrue = true;
+        }
         gameObject.SetActive(false);
-        BuildManeger.instant.posTower.GetComponent<Fields>().towerTrue = true;
     }
 
     public void sell()
     {
         GameObject Upgrade = GameObject.FindGameObjectWithTag("Destroy");
         Upgrade.GetComponent<Canvas>().enabled = false;
+
+        PlayerStats.Money += BuildManeger.instant.destroyTower.GetComponent<Tower>().Cost / 2;
+
         Destroy(BuildManeger.instant.destroyTower);
         BuildManeger.instant.posTower.GetComponent<Fields>().towerTrue = false;
         BuildManeger.instant.destroyTower.GetComponent<Tower>().PlaceTower.GetComponent<Fields>().towerTrue = false;

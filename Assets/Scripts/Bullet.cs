@@ -67,9 +67,10 @@ public class Bullet : MonoBehaviour {
 
     void Damage(Transform enemy)
     {
-        GameObject Score_text = GameObject.Find("Score");
-        Score++;
-        Score_text.GetComponent<Text>().text = "Score: "+Score;
+        //GameObject Score_text = GameObject.Find("Score");
+        //Score++;
+        //Score_text.GetComponent<Text>().text = "Score: "+Score;
+        PlayerStats.Money += 10;
         Destroy(enemy.gameObject);
     }
 }

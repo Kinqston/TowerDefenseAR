@@ -8,6 +8,8 @@ public class Tower : MonoBehaviour {
     // Use this for initialization
     private Transform target;
     public float range = 15f;
+    public int Cost;
+
     public string trollTag;
     public Transform rotateTower;
     public float speedRotate;

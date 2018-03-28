@@ -277,6 +277,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   range: 6
+  Cost: 30
   trollTag: Troll
   rotateTower: {fileID: 4495093684942962}
   speedRotate: 30.06
@@ -286,3 +287,4 @@ MonoBehaviour:
     type: 2}
   FirePoint: {fileID: 4380276077194582}
   DestroyMenu: {fileID: 0}
+  PlaceTower: {fileID: 0}

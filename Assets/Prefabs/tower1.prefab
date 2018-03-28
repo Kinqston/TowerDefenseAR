@@ -239,16 +239,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   range: 6.42
+  Cost: 50
   trollTag: Troll
   rotateTower: {fileID: 4785514799537498}
   speedRotate: 31.25
   fireRate: 1.5
   fireCountDown: 0
-  bullet_prefab: {fileID: 1233143229468134, guid: 5144dcc9b31a0fa4e936dff5118ddd55,
+  bullet_prefab: {fileID: 1484319037318216, guid: 077ca4e4abe99f645a1a61d739c31ae2,
     type: 2}
   FirePoint: {fileID: 4785514799537498}
   DestroyMenu: {fileID: 1146223221224646, guid: b34bf10ab1e5ad540b682c8d2ffeda26,
     type: 2}
+  PlaceTower: {fileID: 0}
 --- !u!114 &114522464241274284
 MonoBehaviour:
   m_ObjectHideFlags: 1
