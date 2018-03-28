@@ -27,7 +27,8 @@ public class Shop : MonoBehaviour {
     public void buildTower1()
     {
         BM.setTowerToBuild(BuildManeger.instant.tower1);
-        Instantiate(BuildManeger.instant.tower1, BuildManeger.instant.posTower.transform.position, BuildManeger.instant.posTower.transform.rotation);
+        GameObject TowerNew = Instantiate(BuildManeger.instant.tower1, BuildManeger.instant.posTower.transform.position, BuildManeger.instant.posTower.transform.rotation);
+        TowerNew.GetComponent<Tower>().PlaceTower = BuildManeger.instant.posTower;
         gameObject.SetActive(false);
 
         //BuildManeger.instant.shopTrue();
@@ -37,7 +38,8 @@ public class Shop : MonoBehaviour {
     public void buildTower2()
     {
         BM.setTowerToBuild(BuildManeger.instant.tower2);
-        Instantiate(BuildManeger.instant.tower2, BuildManeger.instant.posTower.transform.position, BuildManeger.instant.posTower.transform.rotation);
+        GameObject TowerNew = Instantiate(BuildManeger.instant.tower2, BuildManeger.instant.posTower.transform.position, BuildManeger.instant.posTower.transform.rotation);
+        TowerNew.GetComponent<Tower>().PlaceTower = BuildManeger.instant.posTower;
         gameObject.SetActive(false);
         BuildManeger.instant.posTower.GetComponent<Fields>().towerTrue = true;
     }
@@ -46,9 +48,9 @@ public class Shop : MonoBehaviour {
     {
         GameObject Upgrade = GameObject.FindGameObjectWithTag("Destroy");
         Upgrade.GetComponent<Canvas>().enabled = false;
-
         Destroy(BuildManeger.instant.destroyTower);
         BuildManeger.instant.posTower.GetComponent<Fields>().towerTrue = false;
+        BuildManeger.instant.destroyTower.GetComponent<Tower>().PlaceTower.GetComponent<Fields>().towerTrue = false;
     }
 
     public void cancel()

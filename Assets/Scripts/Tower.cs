@@ -20,6 +20,8 @@ public class Tower : MonoBehaviour {
 
     public GameObject DestroyMenu;
 
+    public GameObject PlaceTower;
+
     void Start () {
         //InvokeRepeating("UpdateTarget", 0f, 0.5f);
         StartCoroutine(UpdateTarget());
