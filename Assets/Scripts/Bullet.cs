@@ -2,10 +2,12 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Bullet : MonoBehaviour {
 
     private Transform target;
+    public int Score;
     public float speed;
 
     public float explosionRadius;
@@ -65,6 +67,9 @@ public class Bullet : MonoBehaviour {
 
     void Damage(Transform enemy)
     {
+        GameObject Score_text = GameObject.Find("Score");
+        Score++;
+        Score_text.GetComponent<Text>().text = "Score: "+Score;
         Destroy(enemy.gameObject);
     }
 }
