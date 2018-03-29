@@ -10,6 +10,8 @@ public class Bullet : MonoBehaviour {
     public int Score;
     public float speed;
 
+    public float Damage_bullet;
+
     public float explosionRadius;
 
     public void Rage(Transform _target) {
@@ -44,7 +46,6 @@ public class Bullet : MonoBehaviour {
             Damage(target);
         }
         Destroy(gameObject);
-        Destroy(target.gameObject);
     }
 
     void Explode()
@@ -70,7 +71,14 @@ public class Bullet : MonoBehaviour {
         //GameObject Score_text = GameObject.Find("Score");
         //Score++;
         //Score_text.GetComponent<Text>().text = "Score: "+Score;
-        PlayerStats.Money += 10;
-        Destroy(enemy.gameObject);
+        Debug.Log(enemy.gameObject.GetComponent<TrollController>().Health);
+        enemy.gameObject.GetComponent<TrollController>().Health -= Damage_bullet;
+        enemy.gameObject.GetComponent<TrollController>().HealthBar.fillAmount = enemy.gameObject.GetComponent<TrollController>().Health/enemy.gameObject.GetComponent<TrollController>().StartHealth;
+        if (enemy.gameObject.GetComponent<TrollController>().Health <= 0)
+        {        
+            PlayerStats.Money += 10;
+            Debug.Log("kill");
+            Destroy(enemy.gameObject);
+        }
     }
 }

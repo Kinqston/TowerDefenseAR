@@ -11,7 +11,7 @@ public class MoneyUI : MonoBehaviour {
     private void Update()
     {
         moneyText.text = PlayerStats.Money.ToString();
-        lifeStrange.text = PlayerStats.Life.ToString()
+        lifeStrange.text = PlayerStats.Life.ToString();
     }
 
     
