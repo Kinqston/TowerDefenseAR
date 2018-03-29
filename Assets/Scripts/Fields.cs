@@ -14,9 +14,7 @@ public class Fields : MonoBehaviour {
         if (towerTrue == false)
         { 
             ShopMenu.SetActive(true);
-            BuildManeger.instant.posTower = gameObject;
-
-           
+            BuildManeger.instant.posTower = gameObject;      
         }
 
         

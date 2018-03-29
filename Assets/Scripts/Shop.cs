@@ -32,7 +32,8 @@ public class Shop : MonoBehaviour {
         if (PlayerStats.Money >= BuildManeger.instant.tower1.GetComponent<Tower>().Cost)
         {
             BM.setTowerToBuild(BuildManeger.instant.tower1);
-            GameObject TowerNew = Instantiate(BuildManeger.instant.tower1, BuildManeger.instant.posTower.transform.position, BuildManeger.instant.posTower.transform.rotation);
+            Vector3 posT = new Vector3(BuildManeger.instant.posTower.transform.position.x, 0.7f, BuildManeger.instant.posTower.transform.position.z);
+            GameObject TowerNew = Instantiate(BuildManeger.instant.tower1, posT, BuildManeger.instant.posTower.transform.rotation);
             TowerNew.GetComponent<Tower>().PlaceTower = BuildManeger.instant.posTower;
             //BuildManeger.instant.shopTrue();
             PlayerStats.Money -= 30;
@@ -46,7 +47,8 @@ public class Shop : MonoBehaviour {
         if (PlayerStats.Money >= BuildManeger.instant.tower2.GetComponent<Tower>().Cost)
         {
             BM.setTowerToBuild(BuildManeger.instant.tower2);
-            GameObject TowerNew = Instantiate(BuildManeger.instant.tower2, BuildManeger.instant.posTower.transform.position, BuildManeger.instant.posTower.transform.rotation);
+            Vector3 posT = new Vector3(BuildManeger.instant.posTower.transform.position.x, 0.7f, BuildManeger.instant.posTower.transform.position.z);
+            GameObject TowerNew = Instantiate(BuildManeger.instant.tower2, posT, BuildManeger.instant.posTower.transform.rotation);
             TowerNew.GetComponent<Tower>().PlaceTower = BuildManeger.instant.posTower;            
             PlayerStats.Money -= 50;
             BuildManeger.instant.posTower.GetComponent<Fields>().towerTrue = true;

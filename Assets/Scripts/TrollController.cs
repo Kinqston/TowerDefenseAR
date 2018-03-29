@@ -9,6 +9,8 @@ public class TrollController : MonoBehaviour {
     NavMeshAgent _troll;
     public float StartHealth = 100;
     public float Health;
+
+    private AudioSource soundDead;
     [Header("Unity Stuff")]
     public Image HealthBar;
    // public Transform castle;
@@ -20,6 +22,7 @@ public class TrollController : MonoBehaviour {
         //_troll.SetDestination(castle.position);
         _troll.SetDestination(GameController.GC_ST.Castle.transform.position);
         _troll.speed = GameController.GC_ST.SpeedTrolls;
+        soundDead = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -32,12 +35,13 @@ public class TrollController : MonoBehaviour {
     {
         if (collision.gameObject.tag == "Life")
         {
-            PlayerStats.Life--;
+            PlayerStats.Life--;           
             if (PlayerStats.Life == 0)
             {
                 SceneController Sc = new SceneController();
                 Sc.GameOver();
             }
+            soundDead.Play();
             Destroy(gameObject);
             //Destroy(collision.gameObject);    
         }

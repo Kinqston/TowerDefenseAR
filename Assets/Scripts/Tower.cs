@@ -16,6 +16,7 @@ public class Tower : MonoBehaviour {
 
     public float fireRate = 1f;
     public float fireCountDown = 0f;
+    private AudioSource soundShoot;
 
     public GameObject bullet_prefab;
     public Transform FirePoint;
@@ -27,12 +28,13 @@ public class Tower : MonoBehaviour {
     void Start () {
         //InvokeRepeating("UpdateTarget", 0f, 0.5f);
         StartCoroutine(UpdateTarget());
+        soundShoot = GetComponent<AudioSource>();
 	}
 
     IEnumerator UpdateTarget()
     {
         while (true)
-        {
+        {        
             GameObject[] trolls = GameObject.FindGameObjectsWithTag(trollTag);
             float distance_test = Mathf.Infinity;
             GameObject target_troll_test = null;
@@ -93,6 +95,7 @@ public class Tower : MonoBehaviour {
         {
             Shoot();
             fireCountDown = 1f / fireRate;
+            soundShoot.Play();
         }
         fireCountDown -= Time.deltaTime;
     }
@@ -103,7 +106,7 @@ public class Tower : MonoBehaviour {
         Bullet bullet = Bullet_new.GetComponent<Bullet>();
         if(bullet != null)
         {
-            bullet.Rage(target);
+            bullet.Rage(target);         
         }
     }
 

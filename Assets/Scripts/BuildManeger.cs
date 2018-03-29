@@ -21,14 +21,14 @@ public class BuildManeger : MonoBehaviour {
     public GameObject tower2;
     public GameObject tower3;
 
-    //private void Start()
-    //{
-    //    towerToBuild = tower1;
-    //}
     public GameObject posTower;
+    
+    
 
     private GameObject towerToBuild;
     public GameObject destroyTower;
+
+   
 
     public bool getTowerToBuild()
     {

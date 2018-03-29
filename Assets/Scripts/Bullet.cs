@@ -1,15 +1,11 @@
-﻿using System;
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-using UnityEngine.UI;
+﻿using UnityEngine;
 
 public class Bullet : MonoBehaviour {
 
     private Transform target;
     public int Score;
     public float speed;
-
+    private Sounds song;
     public float Damage_bullet;
 
     public float explosionRadius;
@@ -17,9 +13,10 @@ public class Bullet : MonoBehaviour {
     public void Rage(Transform _target) {
         target = _target;
     }
-	
-	// Update is called once per frame
-	void Update () {
+  
+
+    // Update is called once per frame
+    void Update () {
         if (target == null)
         {
             Destroy(gameObject);
@@ -71,14 +68,16 @@ public class Bullet : MonoBehaviour {
         //GameObject Score_text = GameObject.Find("Score");
         //Score++;
         //Score_text.GetComponent<Text>().text = "Score: "+Score;
-        Debug.Log(enemy.gameObject.GetComponent<TrollController>().Health);
+        //Debug.Log(enemy.gameObject.GetComponent<TrollController>().Health);
         enemy.gameObject.GetComponent<TrollController>().Health -= Damage_bullet;
         enemy.gameObject.GetComponent<TrollController>().HealthBar.fillAmount = enemy.gameObject.GetComponent<TrollController>().Health/enemy.gameObject.GetComponent<TrollController>().StartHealth;
         if (enemy.gameObject.GetComponent<TrollController>().Health <= 0)
         {        
-            PlayerStats.Money += 10;
-            Debug.Log("kill");
+            PlayerStats.Money += 5;
+           // Debug.Log("kill");
+           // song.playSoundDeadMob(enemy.gameObject);
             Destroy(enemy.gameObject);
+           
         }
     }
 }
