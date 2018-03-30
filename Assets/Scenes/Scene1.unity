@@ -4801,14 +4801,44 @@ MonoBehaviour:
   - troll1: {fileID: 1572353927807636, guid: 6adddb967db288e45975c8641b853428, type: 2}
     countTroll1: 5
     troll2: {fileID: 1714002775985970, guid: f6a59a4fafc391546b4f9a8c04109739, type: 2}
-    countTroll2: 3
-    count: 8
-    rate: 1
-  - troll1: {fileID: 1572353927807636, guid: 6adddb967db288e45975c8641b853428, type: 2}
-    countTroll1: 5
-    troll2: {fileID: 1714002775985970, guid: f6a59a4fafc391546b4f9a8c04109739, type: 2}
     countTroll2: 5
     count: 10
+    rate: 1
+  - troll1: {fileID: 1572353927807636, guid: 6adddb967db288e45975c8641b853428, type: 2}
+    countTroll1: 10
+    troll2: {fileID: 1714002775985970, guid: f6a59a4fafc391546b4f9a8c04109739, type: 2}
+    countTroll2: 5
+    count: 15
+    rate: 1
+  - troll1: {fileID: 1572353927807636, guid: 6adddb967db288e45975c8641b853428, type: 2}
+    countTroll1: 11
+    troll2: {fileID: 1714002775985970, guid: f6a59a4fafc391546b4f9a8c04109739, type: 2}
+    countTroll2: 11
+    count: 22
+    rate: 1
+  - troll1: {fileID: 1572353927807636, guid: 6adddb967db288e45975c8641b853428, type: 2}
+    countTroll1: 10
+    troll2: {fileID: 1714002775985970, guid: f6a59a4fafc391546b4f9a8c04109739, type: 2}
+    countTroll2: 15
+    count: 25
+    rate: 1
+  - troll1: {fileID: 1572353927807636, guid: 6adddb967db288e45975c8641b853428, type: 2}
+    countTroll1: 13
+    troll2: {fileID: 1714002775985970, guid: f6a59a4fafc391546b4f9a8c04109739, type: 2}
+    countTroll2: 15
+    count: 28
+    rate: 1
+  - troll1: {fileID: 1572353927807636, guid: 6adddb967db288e45975c8641b853428, type: 2}
+    countTroll1: 15
+    troll2: {fileID: 1714002775985970, guid: f6a59a4fafc391546b4f9a8c04109739, type: 2}
+    countTroll2: 15
+    count: 30
+    rate: 1
+  - troll1: {fileID: 1572353927807636, guid: 6adddb967db288e45975c8641b853428, type: 2}
+    countTroll1: 20
+    troll2: {fileID: 1714002775985970, guid: f6a59a4fafc391546b4f9a8c04109739, type: 2}
+    countTroll2: 15
+    count: 35
     rate: 1
   TimeBetweenWave: 1
 --- !u!114 &745772197
@@ -6714,7 +6744,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1096003302
 RectTransform:
   m_ObjectHideFlags: 0

@@ -120,13 +120,16 @@ public class Tower : MonoBehaviour {
 
     private void OnMouseDown()
     {
-        GameObject Upgrade = GameObject.FindGameObjectWithTag("Destroy");
-        Upgrade.GetComponent<Canvas>().enabled = true;
+        if (PlayerStats.Pause == false)
+        {
+            GameObject Upgrade = GameObject.FindGameObjectWithTag("Destroy");
+            Upgrade.GetComponent<Canvas>().enabled = true;
 
-        GameObject Shop = GameObject.FindGameObjectWithTag("Shop");
-        Shop.GetComponent<Canvas>().enabled = false;
+            GameObject Shop = GameObject.FindGameObjectWithTag("Shop");
+            Shop.GetComponent<Canvas>().enabled = false;
 
-        BuildManeger.instant.destroyTower = gameObject;
+            BuildManeger.instant.destroyTower = gameObject;
+        }
     }
 
 }

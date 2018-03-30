@@ -9,6 +9,7 @@ public class Pause : MonoBehaviour {
 
     public void Continue()
     {
+        PlayerStats.Pause = false;
         Time.timeScale = 1;
         gameObject.SetActive(false);
     }
