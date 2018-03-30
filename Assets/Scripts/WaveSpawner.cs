@@ -16,10 +16,18 @@ public class WaveSpawner : MonoBehaviour {
     private float countdown;
     private int WaveNumber;
 
+    public GameObject WinUI;
+
     void Update()
     {
         if (EnemiesAlive > 0)
             return;
+
+        if (WaveNumber == waves.Length)
+        {
+            Time.timeScale = 0;
+            WinUI.SetActive(true);
+        }
 
         if (countdown <= 0f)
         {
@@ -30,29 +38,25 @@ public class WaveSpawner : MonoBehaviour {
     }
     IEnumerator SpawnWave()
     {
-        PlayerStats.Rounds++;
         Wave wave = waves[WaveNumber];
         PlayerStats.Rounds++;
-        for (int i = 0; i < wave.count; i++)
-        {
-            if (wave.countTroll1 >0 )
-            {
-                SpawnTroll(wave.troll1);
-                wave.countTroll1--;
-            }
-            if (wave.countTroll2 > 0)
-            {
-                SpawnTroll(wave.troll2);
-                wave.countTroll2--;
-            }
-            yield return new WaitForSeconds(1f/ wave.rate);
-        }
-        WaveNumber++;
 
-        if(WaveNumber == wave.count)
-        {
-            Debug.Log("Win");
-        }
+            for (int i = 0; i < wave.count; i++)
+            {
+                if (wave.countTroll1 > 0)
+                {
+                    SpawnTroll(wave.troll1);
+                    wave.countTroll1--;
+                }
+                if (wave.countTroll2 > 0)
+                {
+                    SpawnTroll(wave.troll2);
+                    wave.countTroll2--;
+                }
+                yield return new WaitForSeconds(1f / wave.rate);
+            }
+        
+        WaveNumber++;
     }
 
     private void SpawnTroll(GameObject enemy)
