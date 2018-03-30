@@ -7,7 +7,7 @@ public class HPBAR : MonoBehaviour {
     public GameObject CameraMain;
 
     void Start () {
-        CameraMain = GameObject.Find("Camera");
+        CameraMain = GameObject.Find("ARCamera");
 	}
 	
 	// Update is called once per frame
