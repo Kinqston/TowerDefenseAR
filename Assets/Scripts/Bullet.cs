@@ -24,6 +24,7 @@ public class Bullet : MonoBehaviour {
         }
         Vector3 dir = target.position - transform.position;
         float DistanceFrame = speed * Time.deltaTime;
+        gameObject.transform.LookAt(target.transform);
         if (dir.magnitude <= DistanceFrame)
         {
             Hit();

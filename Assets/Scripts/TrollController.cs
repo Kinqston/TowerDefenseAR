@@ -9,7 +9,7 @@ public class TrollController : MonoBehaviour {
     NavMeshAgent _troll;
     public float StartHealth = 100;
     public float Health;
-
+    //public static 
     private AudioSource soundDead;
     [Header("Unity Stuff")]
     public Image HealthBar;

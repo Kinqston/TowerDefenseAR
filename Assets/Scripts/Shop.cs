@@ -9,11 +9,14 @@ public class Shop : MonoBehaviour {
 
     BuildManeger BM;
 
+    private AudioSource soundBuild;
+
+    public AudioClip songSell;
+
     // Use this for initialization
     void Start() {
         BM = BuildManeger.instant;
     }
-
     // Update is called once per frame
     void Update() {
 
@@ -32,12 +35,15 @@ public class Shop : MonoBehaviour {
         if (PlayerStats.Money >= BuildManeger.instant.tower1.GetComponent<Tower>().Cost)
         {
             BM.setTowerToBuild(BuildManeger.instant.tower1);
+            
             Vector3 posT = new Vector3(BuildManeger.instant.posTower.transform.position.x, 0.7f, BuildManeger.instant.posTower.transform.position.z);
             GameObject TowerNew = Instantiate(BuildManeger.instant.tower1, posT, BuildManeger.instant.posTower.transform.rotation);
             TowerNew.GetComponent<Tower>().PlaceTower = BuildManeger.instant.posTower;
             //BuildManeger.instant.shopTrue();
             PlayerStats.Money -= 30;
             BuildManeger.instant.posTower.GetComponent<Fields>().towerTrue = true;
+            soundBuild = BuildManeger.instant.posTower.GetComponent<AudioSource>();
+            soundBuild.Play();
         }
         gameObject.SetActive(false);
     }
@@ -47,11 +53,13 @@ public class Shop : MonoBehaviour {
         if (PlayerStats.Money >= BuildManeger.instant.tower2.GetComponent<Tower>().Cost)
         {
             BM.setTowerToBuild(BuildManeger.instant.tower2);
-            Vector3 posT = new Vector3(BuildManeger.instant.posTower.transform.position.x, 0.7f, BuildManeger.instant.posTower.transform.position.z);
+            Vector3 posT = new Vector3(BuildManeger.instant.posTower.transform.position.x, 0.2f, BuildManeger.instant.posTower.transform.position.z);
             GameObject TowerNew = Instantiate(BuildManeger.instant.tower2, posT, BuildManeger.instant.posTower.transform.rotation);
             TowerNew.GetComponent<Tower>().PlaceTower = BuildManeger.instant.posTower;            
             PlayerStats.Money -= 50;
             BuildManeger.instant.posTower.GetComponent<Fields>().towerTrue = true;
+            soundBuild = BuildManeger.instant.posTower.GetComponent<AudioSource>();
+            soundBuild.Play();
         }
         gameObject.SetActive(false);
     }
@@ -66,6 +74,10 @@ public class Shop : MonoBehaviour {
         Destroy(BuildManeger.instant.destroyTower);
         BuildManeger.instant.posTower.GetComponent<Fields>().towerTrue = false;
         BuildManeger.instant.destroyTower.GetComponent<Tower>().PlaceTower.GetComponent<Fields>().towerTrue = false;
+
+        soundBuild = BuildManeger.instant.posTower.GetComponent<AudioSource>();
+        soundBuild.clip = Fields.audioSellTower;
+        soundBuild.Play();
     }
 
     public void cancel()

@@ -5,9 +5,15 @@ using UnityEngine;
 public class Fields : MonoBehaviour {
 
     public GameObject ShopMenu;
-    
+    public static AudioClip audioSellTower;
+    public AudioClip audioSell;
     public bool towerTrue;
     //private int lvlTower;
+
+    private void Start()
+    {
+        audioSellTower = audioSell;
+    }
 
     private void OnMouseDown()
     {
@@ -17,6 +23,7 @@ public class Fields : MonoBehaviour {
             BuildManeger.instant.posTower = gameObject;      
         }
 
+        
         
         
 
