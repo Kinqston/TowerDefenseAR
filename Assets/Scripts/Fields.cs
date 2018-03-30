@@ -18,13 +18,15 @@ public class Fields : MonoBehaviour {
 
     private void OnMouseDown()
     {
-        if (towerTrue == false)
+        if (PlayerStats.Pause == false)
         {
-            SellMenu.GetComponent<Canvas>().enabled = false;
-            ShopMenu.GetComponent<Canvas>().enabled = true;
-            BuildManeger.instant.posTower = gameObject;      
+            if (towerTrue == false)
+            {
+                SellMenu.GetComponent<Canvas>().enabled = false;
+                ShopMenu.GetComponent<Canvas>().enabled = true;
+                BuildManeger.instant.posTower = gameObject;
+            }
         }
-
         
         
         

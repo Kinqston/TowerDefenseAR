@@ -13,6 +13,9 @@ public class GameController : MonoBehaviour {
     public GameObject GameOverUI;
     public GameObject GamePauseUI;
 
+    GameObject ShopUI;
+    GameObject UpgradeUI;
+
     public static GameController GC_ST;
 
     void SingleTon()
@@ -48,6 +51,9 @@ public class GameController : MonoBehaviour {
 
     private void Start()
     {
+        ShopUI = GameObject.FindGameObjectWithTag("Shop");
+        UpgradeUI = GameObject.FindGameObjectWithTag("Destroy");
+
         gameEnd = false;
         Time.timeScale = 1;
         WaveSpawner.EnemiesAlive = 0;
@@ -57,11 +63,17 @@ public class GameController : MonoBehaviour {
     {
         gameEnd = true;
         GameOverUI.SetActive(true);
+         UpgradeUI.GetComponent<Canvas>().enabled = false;
+        ShopUI.GetComponent<Canvas>().enabled = false;
     }
 
     public void PauseGame()
     {
         Time.timeScale = 0;
+        PlayerStats.Pause = true;
         GamePauseUI.SetActive(true);
+       // GameOverUI.GetComponent<Canvas>().enabled = false;
+        UpgradeUI.GetComponent<Canvas>().enabled = false;
+        ShopUI.GetComponent<Canvas>().enabled = false;
     }
 }
