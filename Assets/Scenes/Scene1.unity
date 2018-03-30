@@ -5229,10 +5229,10 @@ MonoBehaviour:
   - troll1: {fileID: 1572353927807636, guid: 6adddb967db288e45975c8641b853428, type: 2}
     countTroll1: 10
     troll2: {fileID: 1714002775985970, guid: f6a59a4fafc391546b4f9a8c04109739, type: 2}
-<<<<<<< HEAD
+
     countTroll2: 10
     count: 15
-=======
+
     countTroll2: 5
     count: 15
     rate: 1
@@ -5265,7 +5265,7 @@ MonoBehaviour:
     troll2: {fileID: 1714002775985970, guid: f6a59a4fafc391546b4f9a8c04109739, type: 2}
     countTroll2: 15
     count: 35
->>>>>>> 8db37fc49cea5d1f53ca434ddb46701377fedd64
+
     rate: 1
   TimeBetweenWave: 1
 --- !u!114 &745772197
