@@ -25,6 +25,8 @@ public class Tower : MonoBehaviour {
 
     public GameObject PlaceTower;
 
+    public GameObject ShopUI;
+
     void Start () {
         //InvokeRepeating("UpdateTarget", 0f, 0.5f);
         StartCoroutine(UpdateTarget());
@@ -120,7 +122,7 @@ public class Tower : MonoBehaviour {
     {
         GameObject Upgrade = GameObject.FindGameObjectWithTag("Destroy");
         Upgrade.GetComponent<Canvas>().enabled = true;
-
+        ShopUI.SetActive(false);
         BuildManeger.instant.destroyTower = gameObject;
 
     }
