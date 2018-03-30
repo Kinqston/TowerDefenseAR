@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class LifeController : MonoBehaviour {
 
-
+    private AudioSource songLost;
     //void OnTriggerEnter(Collider other)
     //{
     //    if (other.tag == "")
@@ -12,5 +12,14 @@ public class LifeController : MonoBehaviour {
     //    Destroy(other.gameObject);
     //    Debug.Log("qq");
     //}
+    private void Start()
+    {
+        songLost = GetComponent<AudioSource>();
+    }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        songLost.Play();
+    }
 
 }
