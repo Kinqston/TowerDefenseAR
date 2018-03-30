@@ -122,9 +122,11 @@ public class Tower : MonoBehaviour {
     {
         GameObject Upgrade = GameObject.FindGameObjectWithTag("Destroy");
         Upgrade.GetComponent<Canvas>().enabled = true;
-        ShopUI.SetActive(false);
-        BuildManeger.instant.destroyTower = gameObject;
 
+        GameObject Shop = GameObject.FindGameObjectWithTag("Shop");
+        Shop.GetComponent<Canvas>().enabled = false;
+
+        BuildManeger.instant.destroyTower = gameObject;
     }
 
 }

@@ -8,6 +8,8 @@ public class Shop : MonoBehaviour {
     //public TowerCost Tower2;
 
     BuildManeger BM;
+    GameObject ShopUI;
+    GameObject UpgradeUI;
 
     private AudioSource soundBuild;
 
@@ -16,6 +18,8 @@ public class Shop : MonoBehaviour {
     // Use this for initialization
     void Start() {
         BM = BuildManeger.instant;
+        ShopUI = GameObject.FindGameObjectWithTag("Shop");
+        UpgradeUI = GameObject.FindGameObjectWithTag("Destroy");
     }
     // Update is called once per frame
     void Update() {
@@ -24,8 +28,7 @@ public class Shop : MonoBehaviour {
 
     public void closeShop()
     {
-        // gameObject.SetActive(false);
-
+        ShopUI.GetComponent<Canvas>().enabled = false;
     }
 
 
@@ -45,7 +48,7 @@ public class Shop : MonoBehaviour {
             soundBuild = BuildManeger.instant.posTower.GetComponent<AudioSource>();
             soundBuild.Play();
         }
-        gameObject.SetActive(false);
+        ShopUI.GetComponent<Canvas>().enabled = false;
     }
 
     public void buildTower2()
@@ -61,13 +64,12 @@ public class Shop : MonoBehaviour {
             soundBuild = BuildManeger.instant.posTower.GetComponent<AudioSource>();
             soundBuild.Play();
         }
-        gameObject.SetActive(false);
+        ShopUI.GetComponent<Canvas>().enabled = false;
     }
 
     public void sell()
     {
-        GameObject Upgrade = GameObject.FindGameObjectWithTag("Destroy");
-        Upgrade.GetComponent<Canvas>().enabled = false;
+        UpgradeUI.GetComponent<Canvas>().enabled = false;
 
         PlayerStats.Money += BuildManeger.instant.destroyTower.GetComponent<Tower>().Cost / 2;
 
@@ -82,8 +84,7 @@ public class Shop : MonoBehaviour {
 
     public void cancel()
     {
-        GameObject Upgrade = GameObject.FindGameObjectWithTag("Destroy");
-        Upgrade.GetComponent<Canvas>().enabled = false;
+        UpgradeUI.GetComponent<Canvas>().enabled = false;
     }
    
 

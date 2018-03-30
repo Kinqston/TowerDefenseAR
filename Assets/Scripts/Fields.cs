@@ -20,8 +20,8 @@ public class Fields : MonoBehaviour {
     {
         if (towerTrue == false)
         {
-            SellMenu.SetActive(false);
-            ShopMenu.SetActive(true);
+            SellMenu.GetComponent<Canvas>().enabled = false;
+            ShopMenu.GetComponent<Canvas>().enabled = true;
             BuildManeger.instant.posTower = gameObject;      
         }
 

@@ -347,6 +347,7 @@ MonoBehaviour:
   FirePoint: {fileID: 4957529972350394}
   DestroyMenu: {fileID: 0}
   PlaceTower: {fileID: 0}
+  ShopUI: {fileID: 0}
 --- !u!136 &136875671455850626
 CapsuleCollider:
   m_ObjectHideFlags: 1
