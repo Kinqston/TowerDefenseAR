@@ -8,12 +8,19 @@ public class WaveSpawner : MonoBehaviour {
     public Transform Troll;
     public Transform PointSpawn;
 
-    public float TimeBetweenWave = 5f;
-    public float countdown = 2f;
+    public Wave[] waves;
+
+    public static int EnemiesAlive;
+
+    public float TimeBetweenWave;
+    private float countdown;
     private int WaveNumber;
-    private int waveindex = 0;
+
     void Update()
     {
+        if (EnemiesAlive > 0)
+            return;
+
         if (countdown <= 0f)
         {
             StartCoroutine(SpawnWave());
@@ -23,17 +30,34 @@ public class WaveSpawner : MonoBehaviour {
     }
     IEnumerator SpawnWave()
     {
-        WaveNumber++;
         PlayerStats.Rounds++;
-        for (int i = 0; i < WaveNumber; i++)
+        Wave wave = waves[WaveNumber];
+        PlayerStats.Rounds++;
+        for (int i = 0; i < wave.count; i++)
         {
-            SpawnTroll();
-            yield return new WaitForSeconds(0.5f);
-        }      
+            if (wave.countTroll1 >0 )
+            {
+                SpawnTroll(wave.troll1);
+                wave.countTroll1--;
+            }
+            if (wave.countTroll2 > 0)
+            {
+                SpawnTroll(wave.troll2);
+                wave.countTroll2--;
+            }
+            yield return new WaitForSeconds(1f/ wave.rate);
+        }
+        WaveNumber++;
+
+        if(WaveNumber == wave.count)
+        {
+            Debug.Log("Win");
+        }
     }
 
-    private void SpawnTroll()
+    private void SpawnTroll(GameObject enemy)
     {
-        Instantiate(Troll, PointSpawn.position, PointSpawn.rotation);
+        Instantiate(enemy, PointSpawn.position, PointSpawn.rotation);
+        EnemiesAlive++;
     }
 }

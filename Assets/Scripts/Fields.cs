@@ -7,6 +7,7 @@ public class Fields : MonoBehaviour {
     public GameObject ShopMenu;
     public static AudioClip audioSellTower;
     public AudioClip audioSell;
+    public GameObject SellMenu;
     public bool towerTrue;
     //private int lvlTower;
 
@@ -18,7 +19,8 @@ public class Fields : MonoBehaviour {
     private void OnMouseDown()
     {
         if (towerTrue == false)
-        { 
+        {
+            SellMenu.SetActive(false);
             ShopMenu.SetActive(true);
             BuildManeger.instant.posTower = gameObject;      
         }

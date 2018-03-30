@@ -10,7 +10,6 @@ public class PlayerStats : MonoBehaviour {
     public int Startlife;
     public static int Rounds;
 
-
     void Start()
     {
         Rounds = 0;

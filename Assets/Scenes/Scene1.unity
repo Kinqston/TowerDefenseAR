@@ -427,7 +427,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ShopMenu: {fileID: 190124163}
+<<<<<<< HEAD
   audioSell: {fileID: 0}
+=======
+  SellMenu: {fileID: 1372192905}
+>>>>>>> 5bb006e53eeefe101ca2e6a8c47f0fb020eb6284
   towerTrue: 0
 --- !u!64 &46945833
 MeshCollider:
@@ -685,7 +689,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ShopMenu: {fileID: 190124163}
+<<<<<<< HEAD
   audioSell: {fileID: 0}
+=======
+  SellMenu: {fileID: 1372192905}
+>>>>>>> 5bb006e53eeefe101ca2e6a8c47f0fb020eb6284
   towerTrue: 0
 --- !u!64 &96665168
 MeshCollider:
@@ -1054,7 +1062,11 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
   m_AnchoredPosition: {x: -17.900002, y: -60.69995}
+<<<<<<< HEAD
   m_SizeDelta: {x: 130, y: 110}
+=======
+  m_SizeDelta: {x: 120, y: 100}
+>>>>>>> 5bb006e53eeefe101ca2e6a8c47f0fb020eb6284
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &130766839
 MonoBehaviour:
@@ -1549,7 +1561,7 @@ Canvas:
   m_GameObject: {fileID: 190124163}
   m_Enabled: 1
   serializedVersion: 3
-  m_RenderMode: 1
+  m_RenderMode: 0
   m_Camera: {fileID: 1997590679}
   m_PlaneDistance: 5
   m_PixelPerfect: 0
@@ -1750,7 +1762,7 @@ Canvas:
   m_GameObject: {fileID: 195247780}
   m_Enabled: 1
   serializedVersion: 3
-  m_RenderMode: 1
+  m_RenderMode: 0
   m_Camera: {fileID: 1997590679}
   m_PlaneDistance: 5
   m_PixelPerfect: 0
@@ -3051,7 +3063,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ShopMenu: {fileID: 190124163}
+<<<<<<< HEAD
   audioSell: {fileID: 0}
+=======
+  SellMenu: {fileID: 1372192905}
+>>>>>>> 5bb006e53eeefe101ca2e6a8c47f0fb020eb6284
   towerTrue: 0
 --- !u!64 &472937978
 MeshCollider:
@@ -4213,7 +4229,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ShopMenu: {fileID: 190124163}
+<<<<<<< HEAD
   audioSell: {fileID: 0}
+=======
+  SellMenu: {fileID: 1372192905}
+>>>>>>> 5bb006e53eeefe101ca2e6a8c47f0fb020eb6284
   towerTrue: 0
 --- !u!64 &681627697
 MeshCollider:
@@ -4471,7 +4491,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ShopMenu: {fileID: 190124163}
+<<<<<<< HEAD
   audioSell: {fileID: 0}
+=======
+  SellMenu: {fileID: 1372192905}
+>>>>>>> 5bb006e53eeefe101ca2e6a8c47f0fb020eb6284
   towerTrue: 0
 --- !u!64 &700536362
 MeshCollider:
@@ -4774,8 +4798,38 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Troll: {fileID: 4019294399658854, guid: 72314581640919e4297debe7ccfe7aab, type: 2}
   PointSpawn: {fileID: 1948268004}
-  TimeBetweenWave: 5
-  countdown: 2
+  waves:
+  - troll1: {fileID: 1572353927807636, guid: 6adddb967db288e45975c8641b853428, type: 2}
+    countTroll1: 2
+    troll2: {fileID: 1714002775985970, guid: f6a59a4fafc391546b4f9a8c04109739, type: 2}
+    countTroll2: 1
+    count: 3
+    rate: 1
+  - troll1: {fileID: 1572353927807636, guid: 6adddb967db288e45975c8641b853428, type: 2}
+    countTroll1: 3
+    troll2: {fileID: 1714002775985970, guid: f6a59a4fafc391546b4f9a8c04109739, type: 2}
+    countTroll2: 2
+    count: 5
+    rate: 1
+  - troll1: {fileID: 1572353927807636, guid: 6adddb967db288e45975c8641b853428, type: 2}
+    countTroll1: 4
+    troll2: {fileID: 1714002775985970, guid: f6a59a4fafc391546b4f9a8c04109739, type: 2}
+    countTroll2: 3
+    count: 7
+    rate: 1
+  - troll1: {fileID: 1572353927807636, guid: 6adddb967db288e45975c8641b853428, type: 2}
+    countTroll1: 5
+    troll2: {fileID: 1714002775985970, guid: f6a59a4fafc391546b4f9a8c04109739, type: 2}
+    countTroll2: 3
+    count: 8
+    rate: 1
+  - troll1: {fileID: 1572353927807636, guid: 6adddb967db288e45975c8641b853428, type: 2}
+    countTroll1: 5
+    troll2: {fileID: 1714002775985970, guid: f6a59a4fafc391546b4f9a8c04109739, type: 2}
+    countTroll2: 5
+    count: 10
+    rate: 1
+  TimeBetweenWave: 1
 --- !u!114 &745772197
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4848,7 +4902,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ShopMenu: {fileID: 190124163}
+<<<<<<< HEAD
   audioSell: {fileID: 0}
+=======
+  SellMenu: {fileID: 1372192905}
+>>>>>>> 5bb006e53eeefe101ca2e6a8c47f0fb020eb6284
   towerTrue: 0
 --- !u!64 &751028212
 MeshCollider:
@@ -5179,7 +5237,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ShopMenu: {fileID: 190124163}
+<<<<<<< HEAD
   audioSell: {fileID: 0}
+=======
+  SellMenu: {fileID: 1372192905}
+>>>>>>> 5bb006e53eeefe101ca2e6a8c47f0fb020eb6284
   towerTrue: 0
 --- !u!64 &780063625
 MeshCollider:
@@ -6187,7 +6249,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ShopMenu: {fileID: 190124163}
+<<<<<<< HEAD
   audioSell: {fileID: 0}
+=======
+  SellMenu: {fileID: 1372192905}
+>>>>>>> 5bb006e53eeefe101ca2e6a8c47f0fb020eb6284
   towerTrue: 0
 --- !u!64 &1046574261
 MeshCollider:
@@ -7935,7 +8001,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ShopMenu: {fileID: 190124163}
+<<<<<<< HEAD
   audioSell: {fileID: 0}
+=======
+  SellMenu: {fileID: 1372192905}
+>>>>>>> 5bb006e53eeefe101ca2e6a8c47f0fb020eb6284
   towerTrue: 0
 --- !u!64 &1323548957
 MeshCollider:
@@ -8641,7 +8711,7 @@ Canvas:
   m_GameObject: {fileID: 1372192905}
   m_Enabled: 0
   serializedVersion: 3
-  m_RenderMode: 1
+  m_RenderMode: 0
   m_Camera: {fileID: 1997590679}
   m_PlaneDistance: 5
   m_PixelPerfect: 0
@@ -10956,7 +11026,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ShopMenu: {fileID: 190124163}
+<<<<<<< HEAD
   audioSell: {fileID: 0}
+=======
+  SellMenu: {fileID: 1372192905}
+>>>>>>> 5bb006e53eeefe101ca2e6a8c47f0fb020eb6284
   towerTrue: 0
 --- !u!64 &1811111975
 MeshCollider:
@@ -12261,7 +12335,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ShopMenu: {fileID: 190124163}
+<<<<<<< HEAD
   audioSell: {fileID: 8300000, guid: 492ff618e626de441becb69297d4955c, type: 3}
+=======
+  SellMenu: {fileID: 1372192905}
+>>>>>>> 5bb006e53eeefe101ca2e6a8c47f0fb020eb6284
   towerTrue: 0
 --- !u!64 &2038081815
 MeshCollider:
