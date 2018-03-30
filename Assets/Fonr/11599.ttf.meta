@@ -1,0 +1,23 @@
+fileFormatVersion: 2
+guid: f66c196219fb6c949a3b729fc7b9ae97
+timeCreated: 1522406626
+licenseType: Free
+TrueTypeFontImporter:
+  externalObjects: {}
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontName: Astakhov Brush Hooliganism
+  fontNames:
+  - Astakhov Brush Hooliganism
+  fallbackFontReferences: []
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  useLegacyBoundsCalculation: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

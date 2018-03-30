@@ -352,7 +352,7 @@ MonoBehaviour:
   speedRotate: 30.06
   fireRate: 1.3
   fireCountDown: 0
-  bullet_prefab: {fileID: 1558775898714362, guid: bfd701d907d9d7747ad0123f035f6c78,
+  bullet_prefab: {fileID: 1778049430483140, guid: bfd701d907d9d7747ad0123f035f6c78,
     type: 2}
   FirePoint: {fileID: 4380276077194582}
   DestroyMenu: {fileID: 0}
