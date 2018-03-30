@@ -74,8 +74,11 @@ public class Bullet : MonoBehaviour {
         if (enemy.gameObject.GetComponent<TrollController>().Health <= 0)
         {        
             PlayerStats.Money += 5;
-           // Debug.Log("kill");
-           // song.playSoundDeadMob(enemy.gameObject);
+            // Debug.Log("kill");
+            // song.playSoundDeadMob(enemy.gameObject);
+
+            WaveSpawner.EnemiesAlive--;
+
             Destroy(enemy.gameObject);
            
         }

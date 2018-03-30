@@ -35,15 +35,10 @@ public class TrollController : MonoBehaviour {
     {
         if (collision.gameObject.tag == "Life")
         {
-            PlayerStats.Life--;           
-            if (PlayerStats.Life == 0)
-            {
-                SceneController Sc = new SceneController();
-                Sc.GameOver();
-            }
+            PlayerStats.Life--;
+            WaveSpawner.EnemiesAlive--;
             soundDead.Play();
-            Destroy(gameObject);
-            //Destroy(collision.gameObject);    
+            Destroy(gameObject);  
         }
     }
 }

@@ -49,9 +49,11 @@ public class GameController : MonoBehaviour {
     private void Start()
     {
         gameEnd = false;
+        Time.timeScale = 1;
+        WaveSpawner.EnemiesAlive = 0;
     }
 
-    private void EndGame()
+    public void EndGame()
     {
         gameEnd = true;
         GameOverUI.SetActive(true);
