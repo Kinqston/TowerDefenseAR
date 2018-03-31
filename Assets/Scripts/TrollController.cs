@@ -41,4 +41,9 @@ public class TrollController : MonoBehaviour {
             Destroy(gameObject);  
         }
     }
+
+    private void OnEnable()
+    {
+        _troll.SetDestination(GameController.GC_ST.Castle.transform.position);
+    }
 }

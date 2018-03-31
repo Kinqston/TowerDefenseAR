@@ -113,7 +113,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1093294880730158}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -17.809504, y: 0.15583108, z: 1.208692}
+  m_LocalPosition: {x: 1.454638, y: 10.848476, z: 23.501308}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4263808491355966}
@@ -336,6 +336,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   range: 6.42
+  parent: {fileID: 4910848727997508, guid: 2511538c65f09074b8c216eaffb44038, type: 2}
   Cost: 50
   trollTag: Troll
   rotateTower: {fileID: 4575954636136072}

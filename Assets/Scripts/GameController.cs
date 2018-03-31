@@ -57,6 +57,9 @@ public class GameController : MonoBehaviour {
         gameEnd = false;
         Time.timeScale = 1;
         WaveSpawner.EnemiesAlive = 0;
+
+        UpgradeUI.GetComponent<Canvas>().enabled = false;
+        ShopUI.GetComponent<Canvas>().enabled = false;
     }
 
     public void EndGame()

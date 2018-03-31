@@ -8,6 +8,7 @@ public class Tower : MonoBehaviour {
     // Use this for initialization
     private Transform target;
     public float range = 15f;
+    public Transform parent;
     public int Cost;
 
     public string trollTag;
@@ -31,6 +32,7 @@ public class Tower : MonoBehaviour {
         //InvokeRepeating("UpdateTarget", 0f, 0.5f);
         StartCoroutine(UpdateTarget());
         soundShoot = GetComponent<AudioSource>();
+        parent = GameObject.Find("GameObject").transform;
 	}
 
     IEnumerator UpdateTarget()
@@ -105,6 +107,7 @@ public class Tower : MonoBehaviour {
     private void Shoot()
     {
         GameObject Bullet_new = (GameObject)Instantiate(bullet_prefab, FirePoint.position, FirePoint.rotation);
+        Bullet_new.transform.SetParent(parent);
         Bullet bullet = Bullet_new.GetComponent<Bullet>();
         if(bullet != null)
         {

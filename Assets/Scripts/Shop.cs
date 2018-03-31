@@ -10,6 +10,7 @@ public class Shop : MonoBehaviour {
     BuildManeger BM;
     GameObject ShopUI;
     GameObject UpgradeUI;
+    public Transform parent;
 
     private AudioSource soundBuild;
 
@@ -40,7 +41,9 @@ public class Shop : MonoBehaviour {
             BM.setTowerToBuild(BuildManeger.instant.tower1);
             
             Vector3 posT = new Vector3(BuildManeger.instant.posTower.transform.position.x, 0.7f, BuildManeger.instant.posTower.transform.position.z);
+
             GameObject TowerNew = Instantiate(BuildManeger.instant.tower1, posT, BuildManeger.instant.posTower.transform.rotation);
+            TowerNew.transform.SetParent(parent);
             TowerNew.GetComponent<Tower>().PlaceTower = BuildManeger.instant.posTower;
             //BuildManeger.instant.shopTrue();
             PlayerStats.Money -= 30;
@@ -58,6 +61,7 @@ public class Shop : MonoBehaviour {
             BM.setTowerToBuild(BuildManeger.instant.tower2);
             Vector3 posT = new Vector3(BuildManeger.instant.posTower.transform.position.x, 0.2f, BuildManeger.instant.posTower.transform.position.z);
             GameObject TowerNew = Instantiate(BuildManeger.instant.tower2, posT, BuildManeger.instant.posTower.transform.rotation);
+            TowerNew.transform.SetParent(parent);
             TowerNew.GetComponent<Tower>().PlaceTower = BuildManeger.instant.posTower;            
             PlayerStats.Money -= 50;
             BuildManeger.instant.posTower.GetComponent<Fields>().towerTrue = true;

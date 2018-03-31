@@ -7,6 +7,7 @@ public class WaveSpawner : MonoBehaviour {
 
     public Transform Troll;
     public Transform PointSpawn;
+    public Transform parent;
 
     public Wave[] waves;
 
@@ -61,7 +62,9 @@ public class WaveSpawner : MonoBehaviour {
 
     private void SpawnTroll(GameObject enemy)
     {
-        Instantiate(enemy, PointSpawn.position, PointSpawn.rotation);
+
+        GameObject mob = GameObject.Instantiate(enemy, PointSpawn.position, PointSpawn.rotation);
+        mob.transform.SetParent(parent);
         EnemiesAlive++;
     }
 }

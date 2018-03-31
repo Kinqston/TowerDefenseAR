@@ -346,6 +346,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   range: 6
+  parent: {fileID: 4910848727997508, guid: 2511538c65f09074b8c216eaffb44038, type: 2}
   Cost: 30
   trollTag: Troll
   rotateTower: {fileID: 4495093684942962}

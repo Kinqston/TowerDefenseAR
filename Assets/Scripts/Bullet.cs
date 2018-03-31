@@ -3,6 +3,7 @@
 public class Bullet : MonoBehaviour {
 
     private Transform target;
+    public Transform parent;
     public int Score;
     public float speed;
     private Sounds song;
