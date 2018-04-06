@@ -48,15 +48,16 @@ public class WaveSpawner : MonoBehaviour {
                 {
                     SpawnTroll(wave.troll1);
                     wave.countTroll1--;
+                    yield return new WaitForSeconds(1);
                 }
                 if (wave.countTroll2 > 0)
                 {
                     SpawnTroll(wave.troll2);
                     wave.countTroll2--;
+                    yield return new WaitForSeconds(1);
                 }
-                yield return new WaitForSeconds(1f / wave.rate);
-            }
-        
+
+            }   
         WaveNumber++;
     }
 

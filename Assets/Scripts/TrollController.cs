@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
@@ -7,6 +8,11 @@ using UnityEngine.UI;
 public class TrollController : MonoBehaviour {
 
     NavMeshAgent _troll;
+
+    public float speed;
+    private Transform target;
+    private int waveIndex = 0;
+
     public float StartHealth = 100;
     public float Health;
     //public static 
@@ -18,17 +24,41 @@ public class TrollController : MonoBehaviour {
     void Start()
     {
         Health = StartHealth;
-        _troll = GetComponent<NavMeshAgent>();
-        //_troll.SetDestination(castle.position);
-        _troll.SetDestination(GameController.GC_ST.Castle.transform.position);
-        _troll.speed = GameController.GC_ST.SpeedTrolls;
+        //_troll = GetComponent<NavMeshAgent>();
+        ////_troll.SetDestination(castle.position);
+        //_troll.SetDestination(GameController.GC_ST.Castle.transform.position);
+        //_troll.speed = GameController.GC_ST.SpeedTrolls;
+
+        target = WayPoints.points[0];
+
         soundDead = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        Vector3 dir = target.position - transform.position;
+        transform.Translate(dir.normalized*speed*Time.deltaTime, Space.World);
+        //transform.LookAt(target.transform);
+
+        Vector3 newDir = Vector3.RotateTowards(transform.forward, dir, speed*0.2f , 0.1f);
+        // Move our position a step closer to the target.
+        transform.rotation = Quaternion.LookRotation(newDir);
+
+        if (Vector3.Distance(transform.position, target.position) <= 0.03f)
+        {
+            GetNextWayPoint();
+        }
+    }
+
+    private void GetNextWayPoint()
+    {
+        if (waveIndex >= WayPoints.points.Length-1)
+        {
+            Destroy(gameObject);
+        }
+        waveIndex++;
+        target = WayPoints.points[waveIndex];
     }
 
     void OnCollisionEnter(Collision collision)
@@ -44,6 +74,6 @@ public class TrollController : MonoBehaviour {
 
     private void OnEnable()
     {
-        _troll.SetDestination(GameController.GC_ST.Castle.transform.position);
+        //_troll.SetDestination(GameController.GC_ST.Castle.transform.position);
     }
 }
