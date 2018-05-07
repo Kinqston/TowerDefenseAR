@@ -40,9 +40,14 @@ public class Shop : MonoBehaviour {
         {
             BM.setTowerToBuild(BuildManeger.instant.tower1);
             
-            Vector3 posT = new Vector3(BuildManeger.instant.posTower.transform.position.x, 0.7f, BuildManeger.instant.posTower.transform.position.z);
+            Vector3 posT = new Vector3(BuildManeger.instant.posTower.transform.position.x, 0.0138f, BuildManeger.instant.posTower.transform.position.z);
 
-            GameObject TowerNew = Instantiate(BuildManeger.instant.tower1, posT, BuildManeger.instant.posTower.transform.rotation);
+            Quaternion Rot;
+            Rot = BuildManeger.instant.posTower.transform.rotation;
+            Rot.x =0;
+            Rot.y = 0;
+
+            GameObject TowerNew = Instantiate(BuildManeger.instant.tower1, posT, new Quaternion(0,0,0,0));
             TowerNew.transform.SetParent(parent);
             TowerNew.GetComponent<Tower>().PlaceTower = BuildManeger.instant.posTower;
             //BuildManeger.instant.shopTrue();
@@ -59,8 +64,8 @@ public class Shop : MonoBehaviour {
         if (PlayerStats.Money >= BuildManeger.instant.tower2.GetComponent<Tower>().Cost)
         {
             BM.setTowerToBuild(BuildManeger.instant.tower2);
-            Vector3 posT = new Vector3(BuildManeger.instant.posTower.transform.position.x, 0.2f, BuildManeger.instant.posTower.transform.position.z);
-            GameObject TowerNew = Instantiate(BuildManeger.instant.tower2, posT, BuildManeger.instant.posTower.transform.rotation);
+            Vector3 posT = new Vector3(BuildManeger.instant.posTower.transform.position.x, 0.0138f, BuildManeger.instant.posTower.transform.position.z);
+            GameObject TowerNew = Instantiate(BuildManeger.instant.tower2, posT, new Quaternion(0, 0, 0, 0));
             TowerNew.transform.SetParent(parent);
             TowerNew.GetComponent<Tower>().PlaceTower = BuildManeger.instant.posTower;            
             PlayerStats.Money -= 50;
