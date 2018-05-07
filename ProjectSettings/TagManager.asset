@@ -9,6 +9,9 @@ TagManager:
   - Destroy
   - Life
   - LifeScore
+  - Test
+  - ShopTag
+  - Upgrade
   layers:
   - Default
   - TransparentFX

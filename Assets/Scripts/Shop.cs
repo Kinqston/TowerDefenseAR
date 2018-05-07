@@ -19,8 +19,8 @@ public class Shop : MonoBehaviour {
     // Use this for initialization
     void Start() {
         BM = BuildManeger.instant;
-        ShopUI = GameObject.FindGameObjectWithTag("Shop");
-        UpgradeUI = GameObject.FindGameObjectWithTag("Destroy");
+        ShopUI = GameObject.FindGameObjectWithTag("ShopTag");
+        UpgradeUI = GameObject.FindGameObjectWithTag("Upgrade");
     }
     // Update is called once per frame
     void Update() {
@@ -29,9 +29,13 @@ public class Shop : MonoBehaviour {
 
     public void closeShop()
     {
-        ShopUI.GetComponent<Canvas>().enabled = false;
+        ShopUI.GetComponent<Canvas>().enabled = false;    
     }
 
+    public void cancel()
+    {
+        UpgradeUI.GetComponent<Canvas>().enabled = false;
+    }
 
 
     public void buildTower1()
@@ -40,11 +44,11 @@ public class Shop : MonoBehaviour {
         {
             BM.setTowerToBuild(BuildManeger.instant.tower1);
             
-            Vector3 posT = new Vector3(BuildManeger.instant.posTower.transform.position.x, 0.0138f, BuildManeger.instant.posTower.transform.position.z);
+            Vector3 posT = new Vector3(BuildManeger.instant.posTower.transform.position.x, BuildManeger.instant.posTower.transform.position.y+0.0138f, BuildManeger.instant.posTower.transform.position.z);
 
             Quaternion Rot;
             Rot = BuildManeger.instant.posTower.transform.rotation;
-            Rot.x =0;
+            Rot.x = 0;
             Rot.y = 0;
 
             GameObject TowerNew = Instantiate(BuildManeger.instant.tower1, posT, new Quaternion(0,0,0,0));
@@ -64,7 +68,7 @@ public class Shop : MonoBehaviour {
         if (PlayerStats.Money >= BuildManeger.instant.tower2.GetComponent<Tower>().Cost)
         {
             BM.setTowerToBuild(BuildManeger.instant.tower2);
-            Vector3 posT = new Vector3(BuildManeger.instant.posTower.transform.position.x, 0.0138f, BuildManeger.instant.posTower.transform.position.z);
+            Vector3 posT = new Vector3(BuildManeger.instant.posTower.transform.position.x, BuildManeger.instant.posTower.transform.position.y + 0.0138f, BuildManeger.instant.posTower.transform.position.z);
             GameObject TowerNew = Instantiate(BuildManeger.instant.tower2, posT, new Quaternion(0, 0, 0, 0));
             TowerNew.transform.SetParent(parent);
             TowerNew.GetComponent<Tower>().PlaceTower = BuildManeger.instant.posTower;            
@@ -91,10 +95,7 @@ public class Shop : MonoBehaviour {
         soundBuild.Play();
     }
 
-    public void cancel()
-    {
-        UpgradeUI.GetComponent<Canvas>().enabled = false;
-    }
+    
    
 
 
