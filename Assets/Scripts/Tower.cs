@@ -8,7 +8,7 @@ public class Tower : MonoBehaviour {
     // Use this for initialization
     private Transform target;
     public float range = 15f;
-    public Transform parent;
+    private Transform parent;
     public int Cost;
 
     public string trollTag;
@@ -32,7 +32,7 @@ public class Tower : MonoBehaviour {
         //InvokeRepeating("UpdateTarget", 0f, 0.5f);
         StartCoroutine(UpdateTarget());
         soundShoot = GetComponent<AudioSource>();
-        parent = GameObject.Find("GameObject").transform;
+        parent = GameObject.Find("Ground Plane Stage").transform;
 	}
 
     IEnumerator UpdateTarget()

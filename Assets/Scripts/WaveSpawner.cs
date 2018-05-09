@@ -16,26 +16,30 @@ public class WaveSpawner : MonoBehaviour {
     public float TimeBetweenWave;
     private float countdown;
     private int WaveNumber;
-
+    public bool Game = false;
     public GameObject WinUI;
 
     void Update()
     {
-        if (EnemiesAlive > 0)
-            return;
-
-        if (WaveNumber == waves.Length)
+        if (Game)
         {
-            Time.timeScale = 0;
-            WinUI.SetActive(true);
-        }
+            if (EnemiesAlive > 0)
+                return;
 
-        if (countdown <= 0f)
-        {
-            StartCoroutine(SpawnWave());
-            countdown = TimeBetweenWave;
+            if (WaveNumber == waves.Length)
+            {
+                Time.timeScale = 0;
+                WinUI.SetActive(true);
+                Game = false;
+            }
+
+            if (countdown <= 0f)
+            {
+                StartCoroutine(SpawnWave());
+                countdown = TimeBetweenWave;
+            }
+            countdown -= Time.deltaTime;
         }
-        countdown -= Time.deltaTime;
     }
     IEnumerator SpawnWave()
     {
