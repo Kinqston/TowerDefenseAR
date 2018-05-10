@@ -194,23 +194,23 @@ MonoBehaviour:
   PointSpawn: {fileID: 1796151248}
   parent: {fileID: 1430686855}
   waves:
-  - troll1: {fileID: 1740538628792214, guid: af0836d83c9160748b5046cb6aa735eb, type: 2}
+  - troll1: {fileID: 1014865510255724, guid: b1351281f64748a45be0576ef2e65d9a, type: 2}
     countTroll1: 2
-    troll2: {fileID: 1740538628792214, guid: af0836d83c9160748b5046cb6aa735eb, type: 2}
+    troll2: {fileID: 1014865510255724, guid: b1351281f64748a45be0576ef2e65d9a, type: 2}
     countTroll2: 1
     count: 3
     rate: 1
-  - troll1: {fileID: 1572353927807636, guid: 6adddb967db288e45975c8641b853428, type: 2}
+  - troll1: {fileID: 1014865510255724, guid: b1351281f64748a45be0576ef2e65d9a, type: 2}
     countTroll1: 3
-    troll2: {fileID: 1714002775985970, guid: f6a59a4fafc391546b4f9a8c04109739, type: 2}
-    countTroll2: 2
-    count: 5
+    troll2: {fileID: 1178855789859774, guid: 5a8160ec4712c874d9e310265d8609bd, type: 2}
+    countTroll2: 1
+    count: 4
     rate: 1
-  - troll1: {fileID: 1572353927807636, guid: 6adddb967db288e45975c8641b853428, type: 2}
-    countTroll1: 4
+  - troll1: {fileID: 1303838198114024, guid: 69414a4e910c6724e854b205e0773d77, type: 2}
+    countTroll1: 5
     troll2: {fileID: 1714002775985970, guid: f6a59a4fafc391546b4f9a8c04109739, type: 2}
-    countTroll2: 3
-    count: 7
+    countTroll2: 0
+    count: 5
     rate: 1
   - troll1: {fileID: 1572353927807636, guid: 6adddb967db288e45975c8641b853428, type: 2}
     countTroll1: 5
@@ -1815,6 +1815,10 @@ Prefab:
     - target: {fileID: 4567673639861144, guid: 69414a4e910c6724e854b205e0773d77, type: 2}
       propertyPath: m_RootOrder
       value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 1303838198114024, guid: 69414a4e910c6724e854b205e0773d77, type: 2}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 69414a4e910c6724e854b205e0773d77, type: 2}
@@ -7340,7 +7344,7 @@ AudioSource:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 951675104}
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: de02fede3fa4f68499fff12518fdef77, type: 3}
@@ -10783,6 +10787,10 @@ Prefab:
     - target: {fileID: 4276681159351532, guid: 5a8160ec4712c874d9e310265d8609bd, type: 2}
       propertyPath: m_RootOrder
       value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 1178855789859774, guid: 5a8160ec4712c874d9e310265d8609bd, type: 2}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 5a8160ec4712c874d9e310265d8609bd, type: 2}
@@ -14385,6 +14393,10 @@ Prefab:
     - target: {fileID: 4283647994620352, guid: b1351281f64748a45be0576ef2e65d9a, type: 2}
       propertyPath: m_RootOrder
       value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 1014865510255724, guid: b1351281f64748a45be0576ef2e65d9a, type: 2}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: b1351281f64748a45be0576ef2e65d9a, type: 2}
@@ -18170,13 +18182,13 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 2024747837}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalRotation: {x: 0.39541638, y: -0, z: -0, w: 0.91850203}
+  m_LocalPosition: {x: 0, y: 0.278, z: -0.424}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 46.584003, y: 0, z: 0}
 --- !u!1 &2033271575
 GameObject:
   m_ObjectHideFlags: 0

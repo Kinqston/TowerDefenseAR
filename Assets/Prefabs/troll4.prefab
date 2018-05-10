@@ -121,7 +121,7 @@ GameObject:
   - component: {fileID: 65181880640410984}
   m_Layer: 0
   m_Name: troll4
-  m_TagString: Untagged
+  m_TagString: Troll
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1720,8 +1720,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e7c8fdd5e5161a743b9861c9b121f5a1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 0.1
-  StartHealth: 100
+  speed: 0.05
+  StartHealth: 130
   Health: 0
   HealthBar: {fileID: 114173045192270338}
 --- !u!114 &114173045192270338
@@ -1757,7 +1757,7 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1178855789859774}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f1ffd9a6280539246b5ea584e2c1c0bd, type: 3}
   m_Name: 
