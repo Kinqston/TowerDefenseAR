@@ -1509,7 +1509,6 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!95 &95511381473827926
 Animator:
   serializedVersion: 3
@@ -1527,7 +1526,6 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!137 &137619892158834908
 SkinnedMeshRenderer:
   m_ObjectHideFlags: 1
@@ -1541,7 +1539,6 @@ SkinnedMeshRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
-  m_RenderingLayerMask: 4294967295
   m_Materials:
   - {fileID: 2100000, guid: 0515e8ccfd1fb3f489cebede11612b14, type: 3}
   m_StaticBatchInfo:
