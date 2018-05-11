@@ -78,11 +78,10 @@ public class Bullet : MonoBehaviour {
             PlayerStats.Money += 5;
             // Debug.Log("kill");
             // song.playSoundDeadMob(enemy.gameObject);
-
             WaveSpawner.EnemiesAlive--;
-
-            Destroy(enemy.gameObject);
-           
+            enemy.GetComponent<Animator>().SetBool("Dead", true);
+            enemy.GetComponent<BoxCollider>().enabled = false;
+            // Destroy(enemy.gameObject);          
         }
     }
 }

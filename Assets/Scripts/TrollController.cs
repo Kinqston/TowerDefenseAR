@@ -37,17 +37,24 @@ public class TrollController : MonoBehaviour {
     // Update is called once per frame
     void Update()
     {
-        Vector3 dir = target.position - transform.position;
-        transform.Translate(dir.normalized*speed*Time.deltaTime, Space.World);
-        //transform.LookAt(target.transform);
-
-        Vector3 newDir = Vector3.RotateTowards(transform.forward, dir, speed*0.2f , 0.1f);
-        // Move our position a step closer to the target.
-        transform.rotation = Quaternion.LookRotation(newDir);
-
-        if (Vector3.Distance(transform.position, target.position) <= 0.03f)
+        if (Health <= 0)
         {
-            GetNextWayPoint();
+            
+        }
+        else
+        {
+            Vector3 dir = target.position - transform.position;
+            transform.Translate(dir.normalized * speed * Time.deltaTime, Space.World);
+            //transform.LookAt(target.transform);
+
+            Vector3 newDir = Vector3.RotateTowards(transform.forward, dir, speed * 0.2f, 0.1f);
+            // Move our position a step closer to the target.
+            transform.rotation = Quaternion.LookRotation(newDir);
+
+            if (Vector3.Distance(transform.position, target.position) <= 0.03f)
+            {
+                GetNextWayPoint();
+            }
         }
     }
 
@@ -75,5 +82,9 @@ public class TrollController : MonoBehaviour {
     private void OnEnable()
     {
         //_troll.SetDestination(GameController.GC_ST.Castle.transform.position);
+    }
+    public void Destroy_enemy()
+    {
+        Destroy(gameObject);
     }
 }
