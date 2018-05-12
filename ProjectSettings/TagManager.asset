@@ -12,6 +12,7 @@ TagManager:
   - Test
   - ShopTag
   - Upgrade
+  - LifeIsLife
   layers:
   - Default
   - TransparentFX

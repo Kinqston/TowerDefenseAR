@@ -75,7 +75,7 @@ public class TrollController : MonoBehaviour {
             PlayerStats.Life--;
             WaveSpawner.EnemiesAlive--;
             soundDead.Play();
-            Destroy(gameObject);  
+            Destroy(gameObject);    
         }
     }
 

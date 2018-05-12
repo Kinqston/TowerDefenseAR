@@ -23,7 +23,6 @@ GameObject:
   - component: {fileID: 114108356944596572}
   - component: {fileID: 114414557235965566}
   - component: {fileID: 82365918350066854}
-  - component: {fileID: 54470036157224718}
   - component: {fileID: 65578374048623966}
   m_Layer: 0
   m_Name: Troll3
@@ -1319,21 +1318,6 @@ Transform:
   m_Father: {fileID: 4014916971572044}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!54 &54470036157224718
-Rigidbody:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1014865510255724}
-  serializedVersion: 2
-  m_Mass: 5555555
-  m_Drag: 0
-  m_AngularDrag: 0
-  m_UseGravity: 0
-  m_IsKinematic: 0
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
 --- !u!65 &65578374048623966
 BoxCollider:
   m_ObjectHideFlags: 1
@@ -1547,8 +1531,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e7c8fdd5e5161a743b9861c9b121f5a1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 0.09
-  StartHealth: 200
+  speed: 1.09
+  StartHealth: 100
   Health: 0
   HealthBar: {fileID: 114508274802426886}
 --- !u!114 &114414568995116926
