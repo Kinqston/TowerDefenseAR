@@ -1703,8 +1703,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e7c8fdd5e5161a743b9861c9b121f5a1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 0.05
-  StartHealth: 400
+  speed: 0.04
+  StartHealth: 250
   Health: 0
   HealthBar: {fileID: 114173045192270338}
 --- !u!114 &114173045192270338

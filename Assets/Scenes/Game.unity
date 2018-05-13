@@ -218,41 +218,41 @@ MonoBehaviour:
     countTroll2: 3
     count: 8
     rate: 1
+  - troll1: {fileID: 1178855789859774, guid: 5a8160ec4712c874d9e310265d8609bd, type: 2}
+    countTroll1: 3
+    troll2: {fileID: 1178855789859774, guid: 5a8160ec4712c874d9e310265d8609bd, type: 2}
+    countTroll2: 2
+    count: 5
+    rate: 1
+  - troll1: {fileID: 1303838198114024, guid: 69414a4e910c6724e854b205e0773d77, type: 2}
+    countTroll1: 7
+    troll2: {fileID: 1303838198114024, guid: 69414a4e910c6724e854b205e0773d77, type: 2}
+    countTroll2: 7
+    count: 14
+    rate: 1
   - troll1: {fileID: 1014865510255724, guid: b1351281f64748a45be0576ef2e65d9a, type: 2}
     countTroll1: 10
-    troll2: {fileID: 1178855789859774, guid: 5a8160ec4712c874d9e310265d8609bd, type: 2}
+    troll2: {fileID: 1014865510255724, guid: b1351281f64748a45be0576ef2e65d9a, type: 2}
     countTroll2: 10
     count: 20
     rate: 1
-  - troll1: {fileID: 1572353927807636, guid: 6adddb967db288e45975c8641b853428, type: 2}
-    countTroll1: 11
-    troll2: {fileID: 1714002775985970, guid: f6a59a4fafc391546b4f9a8c04109739, type: 2}
-    countTroll2: 11
-    count: 22
-    rate: 1
-  - troll1: {fileID: 1572353927807636, guid: 6adddb967db288e45975c8641b853428, type: 2}
+  - troll1: {fileID: 1014865510255724, guid: b1351281f64748a45be0576ef2e65d9a, type: 2}
     countTroll1: 10
-    troll2: {fileID: 1714002775985970, guid: f6a59a4fafc391546b4f9a8c04109739, type: 2}
-    countTroll2: 15
-    count: 25
+    troll2: {fileID: 1303838198114024, guid: 69414a4e910c6724e854b205e0773d77, type: 2}
+    countTroll2: 10
+    count: 20
     rate: 1
-  - troll1: {fileID: 1572353927807636, guid: 6adddb967db288e45975c8641b853428, type: 2}
-    countTroll1: 13
-    troll2: {fileID: 1714002775985970, guid: f6a59a4fafc391546b4f9a8c04109739, type: 2}
-    countTroll2: 15
-    count: 28
-    rate: 1
-  - troll1: {fileID: 1572353927807636, guid: 6adddb967db288e45975c8641b853428, type: 2}
+  - troll1: {fileID: 1014865510255724, guid: b1351281f64748a45be0576ef2e65d9a, type: 2}
     countTroll1: 15
-    troll2: {fileID: 1714002775985970, guid: f6a59a4fafc391546b4f9a8c04109739, type: 2}
-    countTroll2: 15
-    count: 30
+    troll2: {fileID: 1178855789859774, guid: 5a8160ec4712c874d9e310265d8609bd, type: 2}
+    countTroll2: 5
+    count: 20
     rate: 1
-  - troll1: {fileID: 1572353927807636, guid: 6adddb967db288e45975c8641b853428, type: 2}
+  - troll1: {fileID: 1178855789859774, guid: 5a8160ec4712c874d9e310265d8609bd, type: 2}
     countTroll1: 20
-    troll2: {fileID: 1714002775985970, guid: f6a59a4fafc391546b4f9a8c04109739, type: 2}
-    countTroll2: 15
-    count: 35
+    troll2: {fileID: 1178855789859774, guid: 5a8160ec4712c874d9e310265d8609bd, type: 2}
+    countTroll2: 20
+    count: 40
     rate: 1
   TimeBetweenWave: 1
   Game: 0
