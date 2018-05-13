@@ -1791,7 +1791,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 0.17
-  StartHealth: 50
+  StartHealth: 65
   Health: 0
   HealthBar: {fileID: 114504563066123256}
   Canvas_HP: {fileID: 1640569535028300}

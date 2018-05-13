@@ -97,6 +97,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   parent: {fileID: 0}
   Score: 0
-  speed: 45
+  speed: 0.5
   Damage_bullet: 12
   explosionRadius: 0

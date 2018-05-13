@@ -24,7 +24,7 @@ public class WaveSpawner : MonoBehaviour {
     {
         if (Game)
         {
-            if (BeginTime > 3)
+            if (BeginTime > 5)
             {
                 if (EnemiesAlive > 0)
                     return;
