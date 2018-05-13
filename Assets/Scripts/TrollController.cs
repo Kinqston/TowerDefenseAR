@@ -19,6 +19,8 @@ public class TrollController : MonoBehaviour {
     private AudioSource soundDead;
     [Header("Unity Stuff")]
     public Image HealthBar;
+    public GameObject Canvas_HP;
+    public int Gold;
    // public Transform castle;
     // Use this for initialization
     void Start()
@@ -96,7 +98,12 @@ public class TrollController : MonoBehaviour {
     public void Destroy_enemy()
     {
         Destroy(gameObject);
-        PlayerStats.Money += 5;
+        
+    }
+    public void stat()
+    {
+       // Canvas_HP.SetActive(false);
+        PlayerStats.Money += Gold;
         WaveSpawner.EnemiesAlive--;
     }
 }

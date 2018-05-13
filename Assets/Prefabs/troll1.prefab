@@ -1794,6 +1794,8 @@ MonoBehaviour:
   StartHealth: 50
   Health: 0
   HealthBar: {fileID: 114504563066123256}
+  Canvas_HP: {fileID: 1640569535028300}
+  Gold: 2
 --- !u!114 &114984643022333564
 MonoBehaviour:
   m_ObjectHideFlags: 1

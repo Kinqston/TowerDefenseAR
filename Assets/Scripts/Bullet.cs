@@ -79,6 +79,7 @@ public class Bullet : MonoBehaviour {
             // Debug.Log("kill");
             // song.playSoundDeadMob(enemy.gameObject);
             enemy.tag = "Untagged";
+            enemy.GetComponent<TrollController>().Canvas_HP.SetActive(false);
             enemy.GetComponent<Animator>().SetBool("Dead", true);
             enemy.GetComponent<BoxCollider>().enabled = false;
             // Destroy(enemy.gameObject);          
