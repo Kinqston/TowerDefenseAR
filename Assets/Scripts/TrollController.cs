@@ -39,7 +39,7 @@ public class TrollController : MonoBehaviour {
     {
         if (Health <= 0)
         {
-            
+ 
         }
         else
         {
@@ -55,17 +55,18 @@ public class TrollController : MonoBehaviour {
             {
                 GetNextWayPoint();
             }
+           
         }
     }
 
     private void GetNextWayPoint()
-    {
-        if (waveIndex >= WayPoints.points.Length-1)
-        {
-            Destroy(gameObject);
-        }
+    {      
         waveIndex++;
         target = WayPoints.points[waveIndex];
+        if (waveIndex >= WayPoints.points.Length - 1)
+        {
+           // Destroy(gameObject);
+        }
     }
 
     void OnCollisionEnter(Collision collision)
@@ -75,10 +76,19 @@ public class TrollController : MonoBehaviour {
             PlayerStats.Life--;
             WaveSpawner.EnemiesAlive--;
             soundDead.Play();
-            Destroy(gameObject);    
+            Destroy(gameObject);
         }
     }
-
+    void OnTriggerEnter(Collider other)
+    {
+        //if (other.tag == "Life")
+        //{
+        //    PlayerStats.Life--;
+        //    WaveSpawner.EnemiesAlive--;
+        //    soundDead.Play();
+        //    Destroy(gameObject);
+        //}
+    }
     private void OnEnable()
     {
         //_troll.SetDestination(GameController.GC_ST.Castle.transform.position);
@@ -86,5 +96,7 @@ public class TrollController : MonoBehaviour {
     public void Destroy_enemy()
     {
         Destroy(gameObject);
+        PlayerStats.Money += 5;
+        WaveSpawner.EnemiesAlive--;
     }
 }

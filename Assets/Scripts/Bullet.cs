@@ -74,11 +74,11 @@ public class Bullet : MonoBehaviour {
         enemy.gameObject.GetComponent<TrollController>().Health -= Damage_bullet;
         enemy.gameObject.GetComponent<TrollController>().HealthBar.fillAmount = enemy.gameObject.GetComponent<TrollController>().Health/enemy.gameObject.GetComponent<TrollController>().StartHealth;
         if (enemy.gameObject.GetComponent<TrollController>().Health <= 0)
-        {        
-            PlayerStats.Money += 5;
+        {
+
             // Debug.Log("kill");
             // song.playSoundDeadMob(enemy.gameObject);
-            WaveSpawner.EnemiesAlive--;
+            enemy.tag = "Untagged";
             enemy.GetComponent<Animator>().SetBool("Dead", true);
             enemy.GetComponent<BoxCollider>().enabled = false;
             // Destroy(enemy.gameObject);          

@@ -52,12 +52,13 @@ public class Tower : MonoBehaviour {
                 }
                 if (target_troll_test != null && distance_test <= range)
                 {
-                    target = target_troll_test.transform;
+                    target = target_troll_test.transform;                                                        
                 }
                 else
                 {
                     target = null;
                 }
+                
             }
             yield return null;
         }
@@ -89,7 +90,7 @@ public class Tower : MonoBehaviour {
 
     // Update is called once per frame
     void Update () {
-        if (target == null)
+        if (target == null || target.GetComponent<TrollController>().Health<=0)
             return;
         Vector3 dir = target.position - transform.position;
         Quaternion lookRotate = Quaternion.LookRotation(dir);

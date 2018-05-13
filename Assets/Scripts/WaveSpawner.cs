@@ -45,7 +45,6 @@ public class WaveSpawner : MonoBehaviour {
     {
         Wave wave = waves[WaveNumber];
         PlayerStats.Rounds++;
-
             for (int i = 0; i < wave.count; i++)
             {
                 if (wave.countTroll1 > 0)
@@ -67,7 +66,6 @@ public class WaveSpawner : MonoBehaviour {
 
     private void SpawnTroll(GameObject enemy)
     {
-
         GameObject mob = GameObject.Instantiate(enemy, PointSpawn.position, PointSpawn.rotation);
         mob.transform.SetParent(parent);
         EnemiesAlive++;

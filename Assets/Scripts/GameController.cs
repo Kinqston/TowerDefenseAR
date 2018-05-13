@@ -51,8 +51,8 @@ public class GameController : MonoBehaviour {
 
     private void Start()
     {
-        ShopUI = GameObject.FindGameObjectWithTag("Shop");
-        UpgradeUI = GameObject.FindGameObjectWithTag("Destroy");
+        ShopUI = GameObject.FindGameObjectWithTag("ShopTag");
+        UpgradeUI = GameObject.FindGameObjectWithTag("Upgrade");
 
         gameEnd = false;
         Time.timeScale = 1;
@@ -66,7 +66,7 @@ public class GameController : MonoBehaviour {
     {
         gameEnd = true;
         GameOverUI.SetActive(true);
-         UpgradeUI.GetComponent<Canvas>().enabled = false;
+        UpgradeUI.GetComponent<Canvas>().enabled = false;
         ShopUI.GetComponent<Canvas>().enabled = false;
     }
 

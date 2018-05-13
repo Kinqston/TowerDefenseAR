@@ -125,7 +125,7 @@ ModelImporter:
     - serializedVersion: 16
       name: Dying Backwards
       takeName: mixamo.com
-      firstFrame: 30
+      firstFrame: 0
       lastFrame: 138
       wrapMode: 0
       orientationOffsetY: 0
